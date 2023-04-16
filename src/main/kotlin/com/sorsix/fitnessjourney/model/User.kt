@@ -3,25 +3,26 @@ package com.sorsix.fitnessjourney.model
 import com.sorsix.fitnessjourney.model.enums.Gender
 import jakarta.persistence.*
 import lombok.Data
+import java.time.LocalDate
 import java.util.Date
 
 
 @Entity
 @Table(name = "fitness_user")
 @Data
-data class User (
+data class User(
     @GeneratedValue
     @Id
-    val id:Int = 0,
-    val name:String = "",
-    val surname:String = "",
-    val username:String = "",
-    val password:String = "",
+    val id:Int,
+    val name:String,
+    val surname:String,
+    var username:String,
+    val password:String,
     @Enumerated(EnumType.STRING)
-    val gender:Gender = Gender.FEMALE,
-    val dateOfBirth:Date = Date(),
-    @OneToOne
+    val gender: Gender,
+    val dateOfBirth: LocalDate,
+    @OneToOne(cascade = arrayOf(CascadeType.ALL))
     val journal:Journal = Journal()
 ) {
-    constructor() : this(0, "", "", "", "", Gender.FEMALE, Date(), Journal())
+    constructor() : this(0, "", "", "", "", Gender.FEMALE, LocalDate.now(), Journal())
 }
