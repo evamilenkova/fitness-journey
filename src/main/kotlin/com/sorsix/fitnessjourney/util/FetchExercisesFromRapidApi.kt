@@ -37,8 +37,8 @@ fun fetchExercisesFromRapidApi(muscleRepository: MuscleRepository, exerciseRepos
         val jsonArray = JSONArray(responseBody) //from string to json
 
         // Print the fetched data
-        println("Fetched data from Rapid API:")
-        println("Response body: $responseBody") // Print the response body as a string
+//        println("Fetched data from Rapid API:")
+//        println("Response body: $responseBody") // Print the response body as a string
         for (i in 0 until jsonArray.length()) {
             val exerciseObj = jsonArray.getJSONObject(i)
 
@@ -73,16 +73,16 @@ fun fetchExercisesFromRapidApi(muscleRepository: MuscleRepository, exerciseRepos
                 }
             }
 
-            println("NAME")
-            println(name)
-            println("CATEGORY")
-            println(category)
-            println("FORCE")
-            println(force)
-            println("STEPS")
-            println(steps)
-            println("VIDEO")
-            println(video)
+//            println("NAME")
+//            println(name)
+//            println("CATEGORY")
+//            println(category)
+//            println("FORCE")
+//            println(force)
+//            println("STEPS")
+//            println(steps)
+//            println("VIDEO")
+//            println(video)
 
             // Create exerciseEntity object and save to exerciseRepository
             val muscle = muscleRepository.findByName("Biceps")

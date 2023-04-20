@@ -30,13 +30,13 @@ fun fetchMusclesFromRapidApi(muscleRepository: MuscleRepository) {
     val jsonObject = JSONObject(responseBody) //from string to json
 
     // Print the fetched data
-    println("Fetched data from Rapid API:")
-    println("Response body: $responseBody") // Print the response body as a string
+//    println("Fetched data from Rapid API:")
+//    println("Response body: $responseBody") // Print the response body as a string
     val musclesArray = jsonObject.getJSONArray("muscles")
     //za sekoj element od array se povikuva konstruktorot od Muscle entitetot i se zacuvuva vo repository
     musclesArray.forEach { muscle ->
         val muscleEntity = Muscle(name = muscle.toString()) // Create Muscle entity
         muscleRepository.save(muscleEntity) // Save Muscle entity to the database
-        println(muscle.toString())
+//        println(muscle.toString())
     }
 }

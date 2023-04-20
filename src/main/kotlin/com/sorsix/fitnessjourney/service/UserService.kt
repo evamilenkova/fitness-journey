@@ -1,24 +1,15 @@
 package com.sorsix.fitnessjourney.service
 
-import com.sorsix.fitnessjourney.model.User
-import com.sorsix.fitnessjourney.repository.UserRepository
-import org.springframework.stereotype.Service
+import org.springframework.security.core.userdetails.User
+import org.springframework.security.core.userdetails.UserDetailsService
 
-@Service
-class UserService(val userRepository: UserRepository) {
+interface UserService:UserDetailsService {
+    override fun loadUserByUsername(username: String): com.sorsix.fitnessjourney.model.User
+    fun save(u:com.sorsix.fitnessjourney.model.User):com.sorsix.fitnessjourney.model.User
+    fun listAll():List<com.sorsix.fitnessjourney.model.User>
+    fun update(id:Number,username:String):com.sorsix.fitnessjourney.model.User
 
-    fun save(u: User):User{
-      return  this.userRepository.save(u)
-    }
-    fun listAll():List<User>{
-        return this.userRepository.findAll();
-    }
-    fun update(id:Number,username:String){
-        val u:User=this.userRepository.findById(id).get()
-        if(u!=null){
-            u.username=username
-        }
-        this.userRepository.save(u)
 
-    }
+
+
 }

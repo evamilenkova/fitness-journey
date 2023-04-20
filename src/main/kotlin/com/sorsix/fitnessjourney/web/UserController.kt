@@ -1,12 +1,12 @@
 package com.sorsix.fitnessjourney.web
 
 import com.sorsix.fitnessjourney.model.User
-import com.sorsix.fitnessjourney.service.UserService
+import com.sorsix.fitnessjourney.service.impl.UserServiceImpl
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/users")
-class UserController(val userService: UserService) {
+class UserController(val userService: UserServiceImpl) {
 
     @GetMapping()
     fun getUsers():List<User>{
