@@ -5,6 +5,8 @@ import com.sorsix.fitnessjourney.repository.MuscleRepository
 import com.sorsix.fitnessjourney.util.fetchExercisesFromRapidApi
 import fetchMusclesFromRapidApi
 import jakarta.annotation.PostConstruct
+
+//import jakarta.annotation.PostConstruct
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 

@@ -1,6 +1,8 @@
 package com.sorsix.fitnessjourney.model
 
-import jakarta.persistence.*
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.Id
 import java.util.Collections.emptyList
 
 @Entity

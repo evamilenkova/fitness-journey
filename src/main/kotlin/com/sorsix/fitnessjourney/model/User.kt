@@ -1,10 +1,10 @@
 package com.sorsix.fitnessjourney.model
 
 import com.sorsix.fitnessjourney.model.enums.Gender
-import jakarta.persistence.*
 import lombok.Data
 import java.time.LocalDate
 import java.util.Date
+import javax.persistence.*
 
 
 @Entity

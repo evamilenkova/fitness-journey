@@ -1,10 +1,9 @@
 package com.sorsix.fitnessjourney.model
 
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.Id
-import jakarta.persistence.ManyToMany
-import jakarta.persistence.ManyToOne
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.Id
+import javax.persistence.ManyToOne
 import org.hibernate.Hibernate
 import java.util.Date
 

@@ -1,7 +1,8 @@
 package com.sorsix.fitnessjourney.model
 
 import com.sorsix.fitnessjourney.model.enums.Goal
-import jakarta.persistence.*
+import javax.persistence.*
+
 
 @Entity
 data class Journal(
