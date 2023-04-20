@@ -9,14 +9,7 @@ data class Muscle (
     @Id
     val id:Int = 0,
     val name:String = "",
-    val image:String = "",
-    @ManyToMany
-    @JoinTable(
-        name = "Exercises_Muscle",
-        joinColumns = [JoinColumn(name = "MUSCLE_ID", referencedColumnName = "ID")],
-        inverseJoinColumns = [JoinColumn(name = "EXERCISE_ID", referencedColumnName = "ID")]
-    )
-    val exercises:List<Exercise> = emptyList()
+    val image:String = ""
 ) {
     constructor() : this(0, "", "")
 }
