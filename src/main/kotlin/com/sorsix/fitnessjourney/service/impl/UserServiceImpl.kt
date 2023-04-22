@@ -5,13 +5,15 @@ import com.sorsix.fitnessjourney.repository.UserRepository
 import com.sorsix.fitnessjourney.service.UserService
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
+import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
 
 @Service
-class UserServiceImpl(val userRepository: UserRepository):UserService {
+class UserServiceImpl(val userRepository: UserRepository,val passwordEncoder: PasswordEncoder):UserService {
 
     override fun save(u: User):User{
-        return  this.userRepository.save(u)
+        val user:User=User(u.id,u.name,u.surname,u.username,passwordEncoder.encode(u.password),u.gender,u.dateOfBirth,u.journal,u.role)
+        return  this.userRepository.save(user)
     }
 
     override fun loadUserByUsername(username: String): User {
